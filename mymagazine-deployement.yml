@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: magazine1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: magazine1
+  template:
+    metadata:
+      labels:
+        app: magazine1
+    spec:
+      containers:
+        - image: safaasd/magazine1:1
+          imagePullPolicy: IfNotPresent
+          name: magazine1
+      restartPolicy: Always

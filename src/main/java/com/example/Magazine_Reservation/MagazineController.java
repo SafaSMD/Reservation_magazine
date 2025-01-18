@@ -12,6 +12,12 @@ public class MagazineController {
     @Autowired
     private MagazineService magazineService;
     
+    // Endpoint pour afficher un message de bienvenue
+    @GetMapping("/")
+    public String welcome() {
+        return "Bienvenue dans l'application de gestion des magazines !";
+    }
+    
     // Endpoint pour obtenir tous les magazines
     @GetMapping("/all")
     public List<Magazine> getAllMagazines() {
